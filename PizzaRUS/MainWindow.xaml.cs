@@ -60,39 +60,45 @@ namespace PizzaRUS
 
         private void btn_Pizza_Click(object sender, RoutedEventArgs e) //Adds pizza to the order
         {
-            Button b = (Button)sender;
-            if (b != null)
+            if (sender is Button b)
             {
-                Pizza o = (Pizza)b.DataContext;
-                if (o != null)
+                if (b != null)
                 {
-                    viewModel.AddToOrderPizza(o);
+                    Pizza o = (Pizza)b.DataContext;
+                    if (o != null)
+                    {
+                        viewModel.AddToOrderPizza(o);
+                    }
                 }
             }
         }
 
         private void btn_Tilbehør_Click(object sender, RoutedEventArgs e) //Adds sides to the order
         {
-            Button b = (Button)sender;
-            if (b != null)
+            if (sender is Button b)
             {
-                Tilbehør o = (Tilbehør)b.DataContext;
-                if (o != null)
+                if (b != null)
                 {
-                    viewModel.AddToOrderTilbehør(o);
+                    Tilbehør o = (Tilbehør)b.DataContext;
+                    if (o != null)
+                    {
+                        viewModel.AddToOrderTilbehør(o);
+                    }
                 }
             }
         }
 
         private void btn_Drinks_Click(object sender, RoutedEventArgs e) //Adds drinks to the order
         {
-            Button b = (Button)sender;
-            if (b != null)
+            if (sender is Button b)
             {
-                Drinks o = (Drinks)b.DataContext;
-                if (o != null)
+                if (b != null)
                 {
-                    viewModel.AddToOrderDrinks(o);
+                    Drinks o = (Drinks)b.DataContext;
+                    if (o != null)
+                    {
+                        viewModel.AddToOrderDrinks(o);
+                    }
                 }
             }
         }
@@ -100,17 +106,19 @@ namespace PizzaRUS
 
         private void btn_Delete(object sender, MouseButtonEventArgs e) //Takes item off of the order
         {
-            Button b = (Button)sender;
-            if (b != null)
+            if (sender is Button b)
             {
-                Orders o = (Orders)b.DataContext;
-                if (o != null)
+                if (b != null)
                 {
-                    viewModel.RemoveFromOrder(o);
-                    viewModel.FullPrice = 0;
-                    for (int i = 0; i < viewModel.VM_OrdersDataBase.Count; i++) //Looks at 
+                    Orders o = (Orders)b.DataContext;
+                    if (o != null)
                     {
-                        viewModel.FullPrice += viewModel.VM_OrdersDataBase[i].Price;
+                        viewModel.RemoveFromOrder(o);
+                        viewModel.FullPrice = 0;
+                        for (int i = 0; i < viewModel.VM_OrdersDataBase.Count; i++) //Looks at 
+                        {
+                            viewModel.FullPrice += viewModel.VM_OrdersDataBase[i].Price;
+                        }
                     }
                 }
             }

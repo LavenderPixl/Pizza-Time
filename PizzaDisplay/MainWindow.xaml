@@ -1,11 +1,11 @@
-﻿<Window x:Class="PizzaRUS.BuyWindow"
+﻿<Window x:Class="PizzaDisplay.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PizzaRUS"
+        xmlns:local="clr-namespace:PizzaDisplay"
         mc:Ignorable="d"
-        Title="Pizza Time" Height="700" Width="500" ResizeMode="NoResize" Background="#deb4ab">
+        Title="Order Display" Height="700" Width="500" ResizeMode="NoResize" Background="#deb4ab">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -14,11 +14,10 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="6*"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-
+        
         <Border  BorderBrush="Black" BorderThickness="1" Margin="20" Grid.ColumnSpan="2">
-            <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Background="#FFE8E3">
                 <ItemsControl ItemsSource="{Binding Orders}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -44,14 +43,6 @@
                 </ItemsControl>
             </ScrollViewer>
         </Border>
-
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Bottom" Margin="0 0 0 10">
-            <TextBlock x:Name="t_beløb" Text="Beløb: " FontSize="16"/>
-            <TextBlock x:Name="t_money" TextWrapping="Wrap" Text="{Binding fullprice, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="16"/>
-        </StackPanel>
-
-        <Button x:Name="btn_betal" Content="Betal" Grid.Column="1" Grid.Row="2" FontSize="16" Click="btn_betal_Click"  Background="#f5e3df" Margin="50 0 50 30"/>
-        <Button x:Name="btn_fortryd" Content="Fortryd" Grid.Row="2" FontSize="16" Click="btn_fortryd_Click"  Background="#f5e3df" Margin="50 0 50 30"/>
 
     </Grid>
 </Window>

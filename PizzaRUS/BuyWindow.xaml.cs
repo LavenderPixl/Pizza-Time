@@ -21,6 +21,7 @@ namespace PizzaRUS
 
         private void btn_betal_Click(object sender, RoutedEventArgs e)
         {
+            viewModel.OrdersJson();
             this.DialogResult = true;
         }
 
