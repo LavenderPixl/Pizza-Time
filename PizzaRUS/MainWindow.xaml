@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PizzaRUS"
         mc:Ignorable="d"
-        Title="Pizza Time" Height="750" Width="900" ResizeMode="NoResize" Background="#deb4ab">
+        Title="Pizza Time" Height="750" Width="900" ResizeMode="NoResize" Background="#eec0b4">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
@@ -26,7 +26,7 @@
 
         <!--Tilbehør-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="1" Margin="10 0 10 10">
-            <ScrollViewer x:Name="Scroll_Tilbehør">
+            <ScrollViewer x:Name="Scroll_Tilbehør"  Background="#FFE8E3">
                 <ItemsControl ItemsSource="{Binding VM_TilbehørDataBase}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -40,7 +40,7 @@
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_tilbehør" HorizontalContentAlignment="Left" Background="#f5e3df" Click="btn_Tilbehør_Click">
+                                    <Button x:Name="btn_tilbehør" HorizontalContentAlignment="Left" Background="#ffded6" Click="btn_Tilbehør_Click">
                                         <Border BorderBrush="Black" BorderThickness="1">
                                             <StackPanel Orientation="Horizontal" Width="230">
                                                 <TextBlock Text="{Binding Number}" FontSize="15" MaxWidth="30" Margin="5 0 5 0"/>
@@ -77,7 +77,7 @@
 
         <!--Pizza-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="10 0 10 10">
-            <ScrollViewer x:Name="Scroll_Pizza">
+            <ScrollViewer x:Name="Scroll_Pizza"  Background="#FFE8E3">
                 <ItemsControl ItemsSource="{Binding VM_PizzaDataBase}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -91,7 +91,7 @@
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_pizza" HorizontalContentAlignment="Left" Grid.ColumnSpan="2" Background="#f5e3df" Click="btn_Pizza_Click">
+                                    <Button x:Name="btn_pizza" HorizontalContentAlignment="Left" Grid.ColumnSpan="2" Background="#ffded6" Click="btn_Pizza_Click">
                                         <Border BorderBrush="Black" BorderThickness="1">
                                             <StackPanel Orientation="Horizontal" Width="335">
                                                 <TextBlock Text="{Binding Number}" FontSize="15" Width="20" Margin="5 0 0 0 "/>
@@ -129,7 +129,7 @@
 
         <!--Drikkevarer-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="1" Margin="10 0 10 10">
-            <ScrollViewer x:Name="Scroll_Drikkevarer">
+            <ScrollViewer x:Name="Scroll_Drikkevarer"  Background="#FFE8E3">
                 <ItemsControl ItemsSource="{Binding VM_DrinksDataBase}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -143,7 +143,7 @@
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_drikkervarer" HorizontalContentAlignment="Left" Background="#f5e3df" Click="btn_Drinks_Click" >
+                                    <Button x:Name="btn_drikkervarer" HorizontalContentAlignment="Left" Background="#ffded6" Click="btn_Drinks_Click" >
                                         <Border BorderBrush="Black" BorderThickness="1">
                                             <StackPanel Orientation="Horizontal" Width="230">
                                                 <TextBlock Text="{Binding Number}" FontSize="15" MaxWidth="30" Margin="5 0 5 0 "/>
@@ -176,8 +176,8 @@
 
         <!--Orderliste-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Margin="10 0 10 10">
-            <ScrollViewer x:Name="Scroll_Orderliste">
-                <ItemsControl ItemsSource="{Binding VM_OrdersDataBase}" >
+            <ScrollViewer x:Name="Scroll_Orderliste"  Background="#FFE8E3">
+                <ItemsControl ItemsSource="{Binding VM_OrdersDataBase}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -190,7 +190,7 @@
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_Edit" HorizontalContentAlignment="Left" Background="#f5e3df" Click="btn_Edit_Click" MouseRightButtonDown="btn_Delete" >
+                                    <Button x:Name="btn_Edit" HorizontalContentAlignment="Left" Background="#ffded6" Click="btn_Edit_Click" MouseRightButtonDown="btn_Delete" >
                                         <Border BorderBrush="Black" BorderThickness="1">
                                             <StackPanel Orientation="Horizontal" Width="210">
                                                 <TextBlock Text="{Binding Number}" FontSize="15" Width="20" Margin="5 0 0 0 "/>
@@ -234,7 +234,7 @@
             <TextBlock x:Name="t_pris" TextWrapping="Wrap" Text="{Binding FullPrice, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="17"/>
         </StackPanel>
 
-        <Button x:Name="btn_køb" Content="Køb" Grid.Column="6" Grid.Row="6"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Width="200" Height="60" FontSize="16" Click="btn_Køb_Click" Background="#f5e3df"/>
+        <Button x:Name="btn_køb" Content="Køb" Grid.Column="6" Grid.Row="6"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Width="200" Height="60" FontSize="16" Click="btn_Køb_Click"  Background="#FFE8E3"/>
         
     </Grid>
 </Window>

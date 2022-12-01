@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PizzaRUS"
         mc:Ignorable="d"
-        Title="Custom" Height="600" Width="600" ResizeMode="NoResize" Background="#deb4ab">
+        Title="Custom" Height="600" Width="600" ResizeMode="NoResize" Background="#eec0b4">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -23,7 +23,7 @@
 
         <!--Extra Toppings-->
         <Border  BorderBrush="Black" BorderThickness="1" Margin="40 0 40 0" Grid.Column="0" Grid.Row="1">
-            <ScrollViewer x:Name="Scroll_Extra" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer x:Name="Scroll_Extra" VerticalScrollBarVisibility="Auto"  Background="#FFE8E3">
                 <ItemsControl ItemsSource="{Binding Toppings}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -37,7 +37,7 @@
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_OffPizza" Background="#f5e3df"  Click="btn_OffPizza_Click">
+                                    <Button x:Name="btn_OffPizza" Background="#ffded6"  Click="btn_OffPizza_Click">
                                         <Border BorderBrush="Black" BorderThickness="1">
                                             <StackPanel Orientation="Horizontal" Width="205" Height="40">
                                                 <DockPanel LastChildFill="False">
@@ -57,7 +57,7 @@
 
         <!--Din Pizza-->
         <Border  BorderBrush="Black" BorderThickness="1" Margin="40 0 40 0" Grid.Column="1" Grid.Row="1">
-            <ScrollViewer  x:Name="Scroll_OnPizza" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer  x:Name="Scroll_OnPizza" VerticalScrollBarVisibility="Auto"  Background="#FFE8E3">
                 <ItemsControl ItemsSource="{Binding selected.Toppings}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
@@ -71,7 +71,7 @@
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_OnPizza" HorizontalAlignment="Left" Background="#f5e3df" Click="btn_OnPizza_Click">
+                                    <Button x:Name="btn_OnPizza" HorizontalAlignment="Left" Background="#ffded6" Click="btn_OnPizza_Click">
                                         <Border BorderBrush="Black" BorderThickness="1">
                                             <StackPanel Orientation="Horizontal" Width="205" Height="40">
                                                 <DockPanel LastChildFill="False">
@@ -95,7 +95,7 @@
             <TextBlock x:Name="t_money" TextWrapping="Wrap" Text="{Binding selected.Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="14"/>
         </StackPanel>
 
-        <Button x:Name="btn_ok" Content="Ok" Click="btn_ok_Click" Height="30" Width="60"  FontSize="14" Margin="30, 30, 50, 10" Grid.Row="2" Grid.Column="1" Background="#f5e3df" HorizontalAlignment="Right"/>
-        <Button x:Name="btn_Fortryd" Content="Fortryd" Click="btn_Fortryd_Click" Height="30" Width="60"  FontSize="14" Margin="30, 30, 50, 10" Grid.Row="2" Grid.Column="1" Background="#f5e3df" HorizontalAlignment="Center" />
+        <Button x:Name="btn_ok" Content="Ok" Click="btn_ok_Click" Height="30" Width="60"  FontSize="14" Margin="30, 30, 50, 10" Grid.Row="2" Grid.Column="1" Background="#ffded6" HorizontalAlignment="Right"/>
+        <Button x:Name="btn_Fortryd" Content="Fortryd" Click="btn_Fortryd_Click" Height="30" Width="60"  FontSize="14" Margin="30, 30, 50, 10" Grid.Row="2" Grid.Column="1" Background="#ffded6" HorizontalAlignment="Center" />
     </Grid>
 </Window>

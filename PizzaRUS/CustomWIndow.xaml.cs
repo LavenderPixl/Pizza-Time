@@ -26,7 +26,7 @@ namespace PizzaRUS
 
         public CustomWindow(ObservableCollection<Pizza> Pizza, double Price, CustomViewModel customViewModel, Orders order)
         {
-            InitializeComponent();            
+            InitializeComponent();
             viewModel = customViewModel;
             DataContext = viewModel;
             viewModel.pizza = Pizza;
@@ -57,29 +57,33 @@ namespace PizzaRUS
 
         private void btn_OffPizza_Click(object sender, RoutedEventArgs e) //Button for left side, aka adding to the pizza
         {
-            Button b = (Button)sender;
-            if (b != null) 
+            if (sender is Button b)
             {
-                Toppings SelectedTopping = (Toppings)b.DataContext;
-                if (SelectedTopping != null)
+                if (b != null)
                 {
-                    viewModel.AddTopping(SelectedTopping);
+                    Toppings SelectedTopping = (Toppings)b.DataContext;
+                    if (SelectedTopping != null)
+                    {
+                        viewModel.AddTopping(SelectedTopping);
+                    }
                 }
             }
         }
 
         private void btn_OnPizza_Click(object sender, RoutedEventArgs e) //Button for right side, aka taking off of on pizza
         {
-            Button b = (Button)sender;
-            if (b != null)
+            if (sender is Button b)
             {
-                Toppings SelectedTopping = (Toppings)b.DataContext;
-                if (SelectedTopping != null)
+                if (b != null)
                 {
-                    viewModel.RemoveTopping(SelectedTopping);
+                    Toppings SelectedTopping = (Toppings)b.DataContext;
+                    if (SelectedTopping != null)
+                    {
+                        viewModel.RemoveTopping(SelectedTopping);
+                    }
                 }
-            }            
-        }        
+            }
+        }
 
         private void btn_Fortryd_Click(object sender, RoutedEventArgs e)
         {
