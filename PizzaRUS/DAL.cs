@@ -62,11 +62,6 @@ namespace PizzaRUS
             var Til = JsonConvert.DeserializeObject<ObservableCollection<Tilbehør>>(TilbehørJson);
             TilbehørDataBase = new ObservableCollection<Tilbehør>(Til);
             _TilbehørPublicListe = new();
-
-
-            //Orders 
-            //OrdersDataBase = new ObservableCollection<Orders>();
-            //_OrdersPublicListe = new ObservableCollection<Orders>(OrdersDataBase);
         }
 
         
