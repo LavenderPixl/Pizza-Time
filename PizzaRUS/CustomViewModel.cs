@@ -26,7 +26,6 @@ namespace PizzaRUS
             set
             {
                 Selected = value;
-                //OnPropertyChanged("FullPrice"); 
             }
         }
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -42,7 +41,6 @@ namespace PizzaRUS
         public CustomViewModel()
         {
             Toppings = dal.GetToppings();
-            //var namesCommaSeparated = string.Join(',', selected.Toppings.Select(t => t.Name));
         }
 
         public void RemovePresetToppings()
@@ -65,13 +63,6 @@ namespace PizzaRUS
         {
             
             Toppings.Remove(SelectedTopping);
-            //for (int i = Toppings.Count-1 ; i >= 0; i--)
-            //{
-            //    if (Toppings[i].ID == SelectedTopping.ID)
-            //    {
-            //        Toppings.RemoveAt(i);
-            //    }
-            //}
             selected.Toppings.Add(SelectedTopping);
             selected.Price += SelectedTopping.Price;
         }
@@ -84,13 +75,6 @@ namespace PizzaRUS
                 Toppings.Add(SelectedTopping);
                 selected.Price -= SelectedTopping.Price;
             }
-            //for (int i = selected.Toppings.Count - 1; i >= 0; i--)
-            //{
-            //    if (selected.Toppings[i].ID == SelectedTopping.ID)
-            //    {
-            //        selected.Toppings.RemoveAt(i);
-            //    }
-            //}
 
         }
         public void Fortryd()

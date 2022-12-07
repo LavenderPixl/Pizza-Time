@@ -32,7 +32,7 @@
                                                     <TextBlock Text="{Binding Name}" FontSize="15" Width="200" DockPanel.Dock="Left"/>
                                                     <TextBlock Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="15" Width="70" Margin="140 0 0 0" DockPanel.Dock="Right"/>
                                                 </DockPanel>
-                                                <Border BorderBrush="black" BorderThickness="1"/>
+                                                <Border BorderBrush="black" BorderThickness="0 0 0 1"/>
                                                 <TextBlock Text="{Binding ToppingsValues}" MinHeight="30" FontSize="13" TextWrapping="Wrap" Margin="0 5 0 7" MaxWidth="400"/>
                                             </StackPanel>
                                         </StackPanel>

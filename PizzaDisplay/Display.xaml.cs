@@ -43,13 +43,21 @@ namespace PizzaDisplay
                 var filePath = ofd.FileName;
                 string fileText = File.ReadAllText(filePath);
                 viewModel.OpenOrder(fileText);
+
+
             }
         }
 
         private void btn_orders_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            btn.Background = btn.Background == Brushes.Plum ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#ffded6")) : Brushes.Plum;
+            btn.Background = btn.Background == Brushes.Gray ? (SolidColorBrush)(new BrushConverter().ConvertFrom("#ffded6")) : Brushes.Gray;
         }
+
+        private void btn_Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }

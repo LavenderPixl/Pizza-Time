@@ -15,29 +15,40 @@ namespace PizzaDisplay
 {
     public class DisplayViewModel : INotifyPropertyChanged
     {
+        int ID = 1;
+
+
         private ObservableCollection<Orders> orders;
 
         public ObservableCollection<Orders> Orders
         {
-            get
-            {
-                return orders;
-            }
-            set
-            {
-                orders = value; 
-                OnPropertyChanged("Orders");
-            }
+            get { return orders; }
+            set { orders = value; OnPropertyChanged("Orders"); }
+        }
+
+
+        private ObservableCollection<Bestilling> bestillinger;
+
+        public ObservableCollection<Bestilling> Bestillinger
+        {
+            get { return bestillinger; }
+            set { bestillinger = value; OnPropertyChanged("Bestillinger"); }
         }
 
 
 
-
-
+        public DisplayViewModel()
+        {
+            Orders = new ObservableCollection<Orders>();
+            bestillinger = new ObservableCollection<Bestilling>();
+        }
         public void OpenOrder(string fileText)
         {
             var OrdersPlaceholder = JsonConvert.DeserializeObject<ObservableCollection<Orders>>(fileText);
-            Orders = new ObservableCollection<Orders>(OrdersPlaceholder);
+            Orders = OrdersPlaceholder;
+
+            Bestillinger.Add(new Bestilling(ID++, new ObservableCollection<Orders> (Orders)));
+
             Debug.WriteLine("ooga booga");
 
         }

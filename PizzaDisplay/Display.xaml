@@ -16,31 +16,53 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <Border  BorderBrush="Black" BorderThickness="1" Margin="20" Grid.ColumnSpan="2">
+        <Border BorderBrush="Black" BorderThickness="1" Margin="20" Grid.ColumnSpan="2">
             <ScrollViewer VerticalScrollBarVisibility="Auto" Background="#FFE8E3">
-                <ItemsControl ItemsSource="{Binding Orders}">
+                <ItemsControl ItemsSource="{Binding Bestillinger}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Button x:Name="btn_orders" HorizontalAlignment="Left"  Click="btn_orders_Click" Background="#ffded6">
-                                    <Border BorderBrush="Black" BorderThickness="1">
-                                        <StackPanel Orientation="Horizontal" Width="500">
-                                            <TextBlock Text="{Binding Number}" FontSize="15" MaxWidth="35" Margin="5 0 5 0"/>
-                                            <StackPanel>
-                                                <DockPanel LastChildFill="False">
-                                                    <TextBlock Text="{Binding Name}" FontSize="15" Width="200" DockPanel.Dock="Left"/>
-                                                    <TextBlock Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="15" Width="70" Margin="140 0 0 0" DockPanel.Dock="Right"/>
-                                                </DockPanel>
-                                                <Border BorderBrush="black" BorderThickness="1"/>
-                                                <TextBlock Text="{Binding ToppingsValues}" MinHeight="30" FontSize="13" TextWrapping="Wrap" Margin="0 5 0 7" MaxWidth="400"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                </Button>
+                                <Border BorderBrush="black" BorderThickness="0 1 0 1" Margin="0 0 0 20">
+                                    <StackPanel>
+                                        <Border BorderBrush="Black" BorderThickness="0 0 0 1">
+                                            <DockPanel>
+                                                <TextBlock Text="{Binding Nummer}" FontSize="23" Margin="10 0 0 0"/>
+                                                <Button x:Name="btn_Delete" Click="btn_Delete_Click" Content="Ordre Fuldført" Background="#ffded6" Height="50" Width="100" FontSize="12" HorizontalAlignment="Right" />
+                                            </DockPanel>
+                                        </Border>
+                                        <ItemsControl ItemsSource="{Binding Orders}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+
+                                                        <Button x:Name="btn_orders" HorizontalAlignment="Left"  Click="btn_orders_Click" Background="#ffded6">
+                                                            <StackPanel Orientation="Horizontal" Width="500">
+                                                                <TextBlock Text="{Binding Number}" FontSize="15" MaxWidth="35" Margin="5 0 5 0"/>
+                                                                <StackPanel>
+                                                                    <DockPanel LastChildFill="False">
+                                                                        <TextBlock Text="{Binding Name}" FontSize="15" Width="200" DockPanel.Dock="Left"/>
+                                                                        <TextBlock Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="15" Width="70" Margin="140 0 0 0" DockPanel.Dock="Right"/>
+                                                                    </DockPanel>
+                                                                    <Border BorderBrush="black" BorderThickness="0 0 0 1"/>
+                                                                    <TextBlock Text="{Binding ToppingsValues}" MinHeight="30" FontSize="13" TextWrapping="Wrap" Margin="0 5 0 7" MaxWidth="400"/>
+
+                                                                </StackPanel>
+                                                            </StackPanel>
+                                                        </Button>
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </StackPanel>
+                                </Border>
+
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
+
                 </ItemsControl>
+
+
             </ScrollViewer>
         </Border>
         <Button x:Name="Indlæs" Content="Indlæs Ordre" Grid.Row="1" Grid.ColumnSpan="2" Background="#FFE8E3" Margin="20" FontSize="15" Click="Indlæs_Click"/>
