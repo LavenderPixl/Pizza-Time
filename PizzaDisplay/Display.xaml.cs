@@ -56,6 +56,17 @@ namespace PizzaDisplay
 
         private void btn_Delete_Click(object sender, RoutedEventArgs e)
         {
+            if (sender is Button b)
+            {
+                if (b != null)
+                {
+                    Bestilling o = (Bestilling)b.DataContext;
+                    if (o != null)
+                    {
+                        viewModel.RemoveFromOrder(o);
+                    }
+                }
+            }
 
         }
 

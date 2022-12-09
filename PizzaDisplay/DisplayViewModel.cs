@@ -61,5 +61,10 @@ namespace PizzaDisplay
             }
         }
 
+        public void RemoveFromOrder(Bestilling bestilling)
+        {
+            Bestillinger.Remove(bestilling);
+        }
+
     }
 }

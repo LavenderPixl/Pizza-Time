@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PizzaRUS"
         mc:Ignorable="d"
-        Title="Pizza Time" Height="750" Width="900" ResizeMode="NoResize" Background="#eec0b4">
+        Title="Pizza Time" Height="750" Width="900" ResizeMode="NoResize" Background="White">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="4*"/>
@@ -16,13 +16,18 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.3*"/>
-            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="1.2*"/>
+            <RowDefinition Height="0.4*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
+
+        <Border BorderThickness="0 0 0 1"  BorderBrush="Black" Grid.ColumnSpan="5">
+            <Image Source="HeaderPizza.jpeg" Stretch="UniformToFill" />
+            <!--Header img-->
+        </Border>
 
         <!--Tilbehør-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="1" Margin="10 0 10 10">
@@ -102,7 +107,7 @@
                                                     </DockPanel>
                                                     <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
                                                     <TextBlock Text="{Binding ToppingsValues}" MinHeight="40" FontSize="13" TextWrapping="Wrap" Margin="0 0 0 7" MaxWidth="300"/>
-                                                    
+
                                                     <!--<ItemsControl ItemsSource="{Binding Toppings}"  Height="50" FontSize="11">
                                                         <ItemsControl.ItemsPanel>
                                                             <ItemsPanelTemplate>
@@ -213,28 +218,32 @@
             </ScrollViewer>
         </Border>
 
+        <!--Header Text-->
+
+        <TextBlock x:Name="Header" Text="Pizza Time" FontSize="30" Margin="50" TextDecorations="Underline" />
+
         <!--Tilbehør Text-->
-        <TextBlock x:Name="t_tilbehør" Text="Tilbehør" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20"/>
+        <TextBlock x:Name="t_tilbehør" Text="Tilbehør" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20"/>
         <TextBlock x:Name="t_t_navn" Text="Navn" Grid.Row="1" VerticalAlignment="Bottom" Margin="10 0 0 0" FontSize="12"/>
         <TextBlock x:Name="t_t_pris" Text="Pris" Grid.Row="1" VerticalAlignment="Bottom" Margin="200 0 0 0" FontSize="12"/>
 
         <!--Pizza Text-->
-        <TextBlock x:Name="t_pizza" Text="Pizza" Grid.Column="2" Grid.Row="0"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20" />
+        <TextBlock x:Name="t_pizza" Text="Pizza" Grid.Column="2" Grid.Row="1"  VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20" />
         <TextBlock x:Name="t_p_navn" Text="Navn" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Margin="10 0 0 0" FontSize="12"/>
         <TextBlock x:Name="t_p_pris" Text="Pris" Grid.Row="1" Grid.Column="3" VerticalAlignment="Bottom" Margin="10 0 0 0" FontSize="12"/>
 
         <!--Ordrerliste Text-->
-        <TextBlock x:Name="t_orderliste" Text="Orderliste" Grid.Column="4" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20"/>
+        <TextBlock x:Name="t_orderliste" Text="Orderliste" Grid.Column="4" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,10,0,0" FontSize="20"/>
         <TextBlock x:Name="t_o_navn" Text="Navn" Grid.Row="1" Grid.Column="4" VerticalAlignment="Bottom" Margin="10 0 0 0" FontSize="12"/>
         <TextBlock x:Name="t_o_pris" Text="Pris" Grid.Row="1" Grid.Column="4" VerticalAlignment="Bottom" Margin="200 0 0 0" FontSize="12"/>
 
         <!--Price Text-->
-        <StackPanel Grid.Column="6" Grid.Row="6" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 10 0 0">
+        <StackPanel Grid.Column="6" Grid.Row="6" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 5 0 0">
             <TextBlock x:Name="t_prisTilsammen" Text="Pris tilsammen: " FontSize="17"/>
             <TextBlock x:Name="t_pris" TextWrapping="Wrap" Text="{Binding FullPrice, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="17"/>
         </StackPanel>
 
         <Button x:Name="btn_køb" Content="Køb" Grid.Column="6" Grid.Row="6"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Width="200" Height="60" FontSize="16" Click="btn_Køb_Click"  Background="#FFE8E3"/>
-        
+
     </Grid>
 </Window>
