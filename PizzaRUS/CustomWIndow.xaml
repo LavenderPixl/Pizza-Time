@@ -38,14 +38,12 @@
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2">
                                     <Button x:Name="btn_OffPizza" Background="#ffded6"  Click="btn_OffPizza_Click">
-                                        <Border BorderBrush="Black" BorderThickness="1">
-                                            <StackPanel Orientation="Horizontal" Width="205" Height="40">
-                                                <DockPanel LastChildFill="False">
-                                                        <TextBlock Text="{Binding Name}"  FontSize="15" Width="130" Margin="5 0 0 0" DockPanel.Dock="Left" />
-                                                        <TextBlock x:Name="t_pris" TextWrapping="Wrap" Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="14" DockPanel.Dock="Right"/>
-                                                    </DockPanel>
-                                                </StackPanel>
-                                        </Border>
+                                        <StackPanel Orientation="Horizontal" Width="205" Height="40">
+                                            <DockPanel LastChildFill="False">
+                                                <TextBlock Text="{Binding Name}"  FontSize="15" Width="130" Margin="5 0 0 0" DockPanel.Dock="Left" />
+                                                <TextBlock x:Name="t_pris" TextWrapping="Wrap" Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="14" DockPanel.Dock="Right"/>
+                                            </DockPanel>
+                                        </StackPanel>
                                     </Button>
                                 </Grid>
                             </Grid>
@@ -72,14 +70,12 @@
                                 </Grid.RowDefinitions>
                                 <Grid Grid.ColumnSpan="2">
                                     <Button x:Name="btn_OnPizza" HorizontalAlignment="Left" Background="#ffded6" Click="btn_OnPizza_Click">
-                                        <Border BorderBrush="Black" BorderThickness="1">
-                                            <StackPanel Orientation="Horizontal" Width="205" Height="40">
-                                                <DockPanel LastChildFill="False">
-                                                    <TextBlock Text="{Binding Name}"  FontSize="15" Width="130" Margin="5 0 0 0" DockPanel.Dock="Left"/>
-                                                    <TextBlock x:Name="tt_pris" TextWrapping="Wrap" Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="14" DockPanel.Dock="Right"/>
-                                                </DockPanel>
-                                            </StackPanel>
-                                        </Border>
+                                        <StackPanel Orientation="Horizontal" Width="205" Height="40">
+                                            <DockPanel LastChildFill="False">
+                                                <TextBlock Text="{Binding Name}"  FontSize="15" Width="130" Margin="5 0 0 0" DockPanel.Dock="Left"/>
+                                                <TextBlock x:Name="tt_pris" TextWrapping="Wrap" Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="14" DockPanel.Dock="Right"/>
+                                            </DockPanel>
+                                        </StackPanel>
                                     </Button>
                                 </Grid>
                             </Grid>

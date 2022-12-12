@@ -31,22 +31,42 @@
 
         <!--Tilbehør-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="1" Margin="10 0 10 10">
-            <ScrollViewer x:Name="Scroll_Tilbehør"  Background="#FFE8E3">
+            <ScrollViewer x:Name="Scroll_Tilbehør" Background="#C7CBCE" VerticalScrollBarVisibility="Hidden">
                 <ItemsControl ItemsSource="{Binding VM_TilbehørDataBase}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_tilbehør" HorizontalContentAlignment="Left" Background="#ffded6" Click="btn_Tilbehør_Click">
-                                        <Border BorderBrush="Black" BorderThickness="1">
+
+                            <Border BorderBrush="Black" BorderThickness="0 1 0 1"  Margin="0 0 0 5">
+                                <Button x:Name="btn_tilbehør" HorizontalContentAlignment="Left" Click="btn_Tilbehør_Click">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#feeee7"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#E09D86"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}" >
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.ColumnSpan="2">
                                             <StackPanel Orientation="Horizontal" Width="230">
                                                 <TextBlock Text="{Binding Number}" FontSize="15" MaxWidth="30" Margin="5 0 5 0"/>
                                                 <StackPanel>
@@ -55,7 +75,6 @@
                                                         <TextBlock Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}"  FontSize="12" Width="45"/>
                                                     </StackPanel>
                                                     <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
-
                                                     <ItemsControl ItemsSource="{Binding Info}"  Height="50" FontSize="11">
                                                         <ItemsControl.ItemsPanel>
                                                             <ItemsPanelTemplate>
@@ -70,10 +89,11 @@
                                                     </ItemsControl>
                                                 </StackPanel>
                                             </StackPanel>
-                                        </Border>
-                                    </Button>
-                                </Grid>
-                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Button>
+                            </Border>
+
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -82,22 +102,42 @@
 
         <!--Pizza-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="10 0 10 10">
-            <ScrollViewer x:Name="Scroll_Pizza"  Background="#FFE8E3">
+            <ScrollViewer x:Name="Scroll_Pizza"  Background="#C7CBCE" VerticalScrollBarVisibility="Hidden">
                 <ItemsControl ItemsSource="{Binding VM_PizzaDataBase}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_pizza" HorizontalContentAlignment="Left" Grid.ColumnSpan="2" Background="#ffded6" Click="btn_Pizza_Click">
-                                        <Border BorderBrush="Black" BorderThickness="1">
+
+                            <Border BorderBrush="Black" BorderThickness="0 1 0 1" Margin="0 0 0 5">
+                                <Button x:Name="btn_pizza" HorizontalContentAlignment="Left" Grid.ColumnSpan="2" Click="btn_Pizza_Click">
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#feeee7"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#E09D86"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}" >
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.ColumnSpan="2">
                                             <StackPanel Orientation="Horizontal" Width="335">
                                                 <TextBlock Text="{Binding Number}" FontSize="15" Width="20" Margin="5 0 0 0 "/>
                                                 <StackPanel>
@@ -107,25 +147,13 @@
                                                     </DockPanel>
                                                     <Border BorderBrush="Black" BorderThickness="0 0 0 1"/>
                                                     <TextBlock Text="{Binding ToppingsValues}" MinHeight="40" FontSize="13" TextWrapping="Wrap" Margin="0 0 0 7" MaxWidth="300"/>
-
-                                                    <!--<ItemsControl ItemsSource="{Binding Toppings}"  Height="50" FontSize="11">
-                                                        <ItemsControl.ItemsPanel>
-                                                            <ItemsPanelTemplate>
-                                                                <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" MaxWidth="300"/>
-                                                            </ItemsPanelTemplate>
-                                                        </ItemsControl.ItemsPanel>
-                                                        <ItemsControl.ItemTemplate>
-                                                            <DataTemplate>
-                                                                <TextBlock Margin="0 0 10 0" Text="{Binding Path=Name}" TextWrapping="Wrap"/>
-                                                            </DataTemplate>
-                                                        </ItemsControl.ItemTemplate>
-                                                    </ItemsControl>-->
                                                 </StackPanel>
                                             </StackPanel>
-                                        </Border>
-                                    </Button>
-                                </Grid>
-                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Button>
+                            </Border>
+
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -134,22 +162,42 @@
 
         <!--Drikkevarer-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="1" Margin="10 0 10 10">
-            <ScrollViewer x:Name="Scroll_Drikkevarer"  Background="#FFE8E3">
+            <ScrollViewer x:Name="Scroll_Drikkevarer"  Background="#C7CBCE" VerticalScrollBarVisibility="Hidden">
                 <ItemsControl ItemsSource="{Binding VM_DrinksDataBase}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_drikkervarer" HorizontalContentAlignment="Left" Background="#ffded6" Click="btn_Drinks_Click" >
-                                        <Border BorderBrush="Black" BorderThickness="1">
+
+                            <Border BorderBrush="Black" BorderThickness="0 1 0 1" Margin="0 0 0 5">
+                                <Button x:Name="btn_drikkervarer" HorizontalContentAlignment="Left" Click="btn_Drinks_Click" >
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#feeee7"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#E09D86"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}" >
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.ColumnSpan="2">
                                             <StackPanel Orientation="Horizontal" Width="230">
                                                 <TextBlock Text="{Binding Number}" FontSize="15" MaxWidth="30" Margin="5 0 5 0 "/>
                                                 <StackPanel>
@@ -168,10 +216,11 @@
                                                     </ItemsControl>
                                                 </StackPanel>
                                             </StackPanel>
-                                        </Border>
-                                    </Button>
-                                </Grid>
-                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Button>
+                            </Border>
+
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -181,22 +230,42 @@
 
         <!--Orderliste-->
         <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.RowSpan="3" Grid.Column="4" Margin="10 0 10 10">
-            <ScrollViewer x:Name="Scroll_Orderliste"  Background="#FFE8E3">
+            <ScrollViewer x:Name="Scroll_Orderliste"  Background="#C7CBCE" VerticalScrollBarVisibility="Hidden">
                 <ItemsControl ItemsSource="{Binding VM_OrdersDataBase}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="1*"/>
-                                    <ColumnDefinition Width="1*"/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="1*"/>
-                                    <RowDefinition Height="1*"/>
-                                </Grid.RowDefinitions>
-                                <Grid Grid.ColumnSpan="2">
-                                    <Button x:Name="btn_Edit" HorizontalContentAlignment="Left" Background="#ffded6" Click="btn_Edit_Click" MouseRightButtonDown="btn_Delete" >
-                                        <Border BorderBrush="Black" BorderThickness="1">
+
+                            <Border BorderBrush="Black" BorderThickness="0 1 0 1" Margin="0 0 0 5"> 
+                                <Button x:Name="btn_Edit" HorizontalContentAlignment="Left" Click="btn_Edit_Click" MouseRightButtonDown="btn_Delete" >
+                                    <Button.Style>
+                                        <Style TargetType="Button">
+                                            <Setter Property="Background" Value="#feeee7"/>
+                                            <Setter Property="Cursor" Value="Hand"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Background" Value="#E09D86"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}" >
+                                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="1*"/>
+                                            <RowDefinition Height="1*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.ColumnSpan="2">
                                             <StackPanel Orientation="Horizontal" Width="210">
                                                 <TextBlock Text="{Binding Number}" FontSize="15" Width="20" Margin="5 0 0 0 "/>
                                                 <StackPanel Width="180">
@@ -208,10 +277,11 @@
                                                     <TextBlock Text="{Binding ToppingsValues}" MinHeight="20" FontSize="13" TextWrapping="Wrap" Margin="0 0 0 7"/>
                                                 </StackPanel>
                                             </StackPanel>
-                                        </Border>
-                                    </Button>
-                                </Grid>
-                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Button>
+                            </Border>
+
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
@@ -243,7 +313,27 @@
             <TextBlock x:Name="t_pris" TextWrapping="Wrap" Text="{Binding FullPrice, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="17"/>
         </StackPanel>
 
-        <Button x:Name="btn_køb" Content="Køb" Grid.Column="6" Grid.Row="6"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" Width="200" Height="60" FontSize="16" Click="btn_Køb_Click"  Background="#FFE8E3"/>
-
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="6" Grid.Row="6" Width="200" Height="60" HorizontalAlignment="Center">
+            <Button x:Name="btn_køb" Content="Køb" HorizontalAlignment="Center" FontSize="16" Click="btn_Køb_Click" Width="200">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#feeee7"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E09D86"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" >
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Border>
     </Grid>
 </Window>

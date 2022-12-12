@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PizzaRUS"
         mc:Ignorable="d"
-        Title="Pizza Time" Height="700" Width="500" ResizeMode="NoResize" Background="#eec0b4">
+        Title="Pizza Time" Height="700" Width="500" ResizeMode="NoResize" Background="White">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -18,25 +18,23 @@
         </Grid.RowDefinitions>
 
         <Border  BorderBrush="Black" BorderThickness="1" Margin="20" Grid.ColumnSpan="2">
-            <ScrollViewer VerticalScrollBarVisibility="Auto"  Background="#FFE8E3">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden"  Background="#C7CBCE">
                 <ItemsControl ItemsSource="{Binding Orders}">
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Button x:Name="btn_orders" HorizontalAlignment="Left" Background="#ffded6" IsHitTestVisible="False">
-                                    <Border BorderBrush="Black" BorderThickness="1">
-                                        <StackPanel Orientation="Horizontal" Width="500">
-                                            <TextBlock Text="{Binding Number}" FontSize="15" MaxWidth="35" Margin="5 0 5 0"/>
-                                            <StackPanel>
-                                                <DockPanel LastChildFill="False">
-                                                    <TextBlock Text="{Binding Name}" FontSize="15" Width="200" DockPanel.Dock="Left"/>
-                                                    <TextBlock Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="15" Width="70" Margin="140 0 0 0" DockPanel.Dock="Right"/>
-                                                </DockPanel>
-                                                <Border BorderBrush="black" BorderThickness="0 0 0 1"/>
-                                                <TextBlock Text="{Binding ToppingsValues}" MinHeight="30" FontSize="13" TextWrapping="Wrap" Margin="0 5 0 7" MaxWidth="400"/>
-                                            </StackPanel>
+                                <Button x:Name="btn_orders" HorizontalAlignment="Left" Background="#feeee7" Margin="0 0 0 5" IsHitTestVisible="False">
+                                    <StackPanel Orientation="Horizontal" Width="500">
+                                        <TextBlock Text="{Binding Number}" FontSize="15" MaxWidth="35" Margin="5 0 5 0"/>
+                                        <StackPanel>
+                                            <DockPanel LastChildFill="False">
+                                                <TextBlock Text="{Binding Name}" FontSize="15" Width="200" DockPanel.Dock="Left"/>
+                                                <TextBlock Text="{Binding Price, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="15" Width="70" Margin="140 0 0 0" DockPanel.Dock="Right"/>
+                                            </DockPanel>
+                                            <Border BorderBrush="black" BorderThickness="0 0 0 1"/>
+                                            <TextBlock Text="{Binding ToppingsValues}" MinHeight="30" FontSize="13" TextWrapping="Wrap" Margin="0 5 0 7" MaxWidth="400"/>
                                         </StackPanel>
-                                    </Border>
+                                    </StackPanel>
                                 </Button>
                             </Grid>
                         </DataTemplate>
@@ -50,8 +48,27 @@
             <TextBlock x:Name="t_money" TextWrapping="Wrap" Text="{Binding fullprice, StringFormat='{}{0:c}', ConverterCulture='da-DK'}" FontSize="16"/>
         </StackPanel>
 
-        <Button x:Name="btn_betal" Content="Betal" Grid.Column="1" Grid.Row="2" FontSize="16" Click="btn_betal_Click" Background="#ffded6" Margin="50 0 50 30"/>
-        <Button x:Name="btn_fortryd" Content="Fortryd" Grid.Row="2" FontSize="16" Click="btn_fortryd_Click" Background="#ffded6" Margin="50 0 50 30"/>
-
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Grid.Row="2" Width="100" Height="60" HorizontalAlignment="Center">
+            <Button x:Name="btn_betal" Content="Betal" FontSize="16" Click="btn_betal_Click" Width="100">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#feeee7"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#E09D86"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" >
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Border>
     </Grid>
 </Window>

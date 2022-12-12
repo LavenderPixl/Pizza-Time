@@ -43,8 +43,6 @@ namespace PizzaDisplay
                 var filePath = ofd.FileName;
                 string fileText = File.ReadAllText(filePath);
                 viewModel.OpenOrder(fileText);
-
-
             }
         }
 
