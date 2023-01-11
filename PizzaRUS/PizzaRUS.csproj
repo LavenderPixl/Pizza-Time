@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="HeaderPizza.jpeg" />
+    <None Remove="PizzaDarker.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +18,9 @@
 
   <ItemGroup>
     <Resource Include="HeaderPizza.jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="PizzaDarker.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
